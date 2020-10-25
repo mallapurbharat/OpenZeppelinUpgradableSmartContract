@@ -53,11 +53,11 @@ oz accounts
 
 oz create
 
-//now call Add read functions. you can call the u() function to read the current value of u.
+//now call Add read functions.  at the prompt select the development network, add contract, then you can call the u() function to read the current value of u.
 
 oz call
 
-//now call decrement transaction function. decrement u (currrently zero) by 1... An underflow should occur
+//now call decrementBy transaction function.  at the prompt select the development network, add contract, then decrementBy to decrement u (currrently zero) by 1... An underflow should occur
 
 oz send-tx
 
@@ -66,15 +66,15 @@ oz send-tx
 
 oz call
 
-//next change the Add.sol file to include SafeMath (you'll need to import the openzeppelin/contracts-ethereum-package in the source file)
-
-//first add the evm-package for contracts-ethereum-package
+//at the command line first add the evm-package for contracts-ethereum-package
 
 npm install --save @openzeppelin/contracts-ethereum-package
 
-//now lets upgrade the version! comment out the first part in ADD.sol and uncomment out the second part
+//now lets upgrade the version!
+//change the Add.sol file to comment out phase 1 and uncomment the phase 2 sections
 
-//first, link the application to the dependency and update ganache-cli network to include this dependency
+
+//next at the command line, link the application to the dependency and update ganache-cli network to include this dependency
 
 oz link @openzeppelin/contracts-ethereum-package
 
@@ -82,11 +82,12 @@ oz link @openzeppelin/contracts-ethereum-package
 
 oz upgrade
 
+//ok, if no errors, then we've upgraded the smart contract on the blockchain! Test it out now.
 
 //now we need to read the current value of u - it should still be a huge number 115792089237316195423570985008687907853269984665640564039457584007913129639935
 
 
-//let's try to add one to this value of u. select the incrementBy function and add 1 to the value of u.
+//let's try to add one to this value of u. at the prompt select the development network, add contract, then incrementBy function and add 1 to the value of u.
 oz send-tx
 
 //It would normally *overflow* to the value 0! But SafeMath add() doesn't allow this to happen and stops the overflow and throws an exception! 
