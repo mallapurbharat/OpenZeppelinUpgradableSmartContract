@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: MIT
-/*
+
+//START OF PHASE 1 IN SMART CONTRACT - DEFINITION OF BASE VERSION
+
 pragma solidity >=0.4.22 <0.8.0;
 
 import "@openzeppelin/upgrades/contracts/Initializable.sol";
@@ -19,9 +21,11 @@ contract Add is Initializable {
     }
     
 }
-*/
 
+//END OF PHASE 1 IN SMART CONTRACT - DEFINITION OF BASE VERSION
 
+/* 
+ //START OF PHASE 2 IN SMART CONTRACT - DEFINITION OF UPGRADED SMART CONTRACT VERSION
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.8.0;
 import "@openzeppelin/contracts-ethereum-package/contracts/math/SafeMath.sol";
@@ -43,3 +47,6 @@ contract Add is Initializable {
     }
     
 }
+
+//END OF PHASE 2 IN SMART CONTRACT - DEFINITION OF UPGRADED SMART CONTRACT VERSION
+*/
